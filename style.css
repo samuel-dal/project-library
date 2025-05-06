@@ -9,15 +9,16 @@
   --fg-color: #1B4D3E;
   --book-color: #6385c5;
   --book-left-border: #7893cf;
-  --svg-read: lightgreen;
-  --svg-delete-hover: #ff0f0f;
+  --read-btn: lightgreen;
+  --delete-btn: #ff0f0f;
   --title-color: #F9C11C;
   --author-color: white;
 
 
-  --book-grid-template: repeat(auto-fit, minmax(23.7%, 1fr));/* toggle */
+  --book-grid-template: repeat(auto-fit, minmax(14rem, 1fr));
+  --gap-size: 0;
   --display-form: none;/* toggle flex */
-  --input-outline-error: var(--svg-delete-hover);
+  --input-outline-error: var(--delete-btn);
 }
 
 body{
@@ -76,11 +77,11 @@ body{
   scrollbar-color: var(--fg-color) transparent;
   display: grid;
   grid-template-columns: var(--book-grid-template);
-  gap: 1rem;
+  gap: calc(100% - 98.6%);
 
   > *{
     border-left: 15px solid var(--book-left-border);
-    border-radius: .2rem 1rem 1rem .2rem;
+    border-radius: .2rem .5rem .4rem .2rem;
   }
 }
 
@@ -91,26 +92,6 @@ body{
   padding: 1rem;
   background-color: var(--book-color);
   color: var(--author-color);
-
-  svg{
-    width: 2rem;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    fill: var(--fg-color);
-  }
-
-  svg.not-read{
-    fill: var(--fg-color);
-  }
-
-  svg.read{
-    fill: var(--svg-read);
-  }
-
-  svg.delete:hover{
-    fill: var(--svg-delete-hover);
-  }
 
   > *{
     height: 12%;
@@ -136,7 +117,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+
+    > button{
+      width: 45%;
+      height: 100%;
+      border-radius: 5px;
+      border: none;
+      background-color: var(--bg-color);
+    }
+
+    > button:nth-of-type(2):hover{
+      background: var(--delete-btn);
+    }
   }
 }
 
@@ -169,7 +162,7 @@ body{
     }
 
     svg:hover{
-      fill: var(--svg-delete-hover);
+      fill: var(--delete-btn);
     }
 
     label{
@@ -199,7 +192,3 @@ body{
     }
   }
 }
-
-
-
-
