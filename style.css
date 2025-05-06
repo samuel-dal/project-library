@@ -136,6 +136,7 @@ body{
 .dialog{
   position: absolute;
   width: 100%;
+  border: none;
   height: 100%;
   top: 0;
   z-index: 100;
@@ -143,6 +144,7 @@ body{
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
 
   form{
     display: var(--display-form);
@@ -152,6 +154,7 @@ body{
     border: 3px solid var(--book-left-border);
     position: relative;
     background-color: var(--book-color);
+    max-width: 324px;
 
     svg{
       width: 2rem;
@@ -178,6 +181,7 @@ body{
         padding: 0 0.2rem;
         font-size: 1.2rem;
         border: none;
+        width: 100%;
       }
     }
 
